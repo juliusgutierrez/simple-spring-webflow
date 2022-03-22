@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SimpleSpringWebflowApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SimpleSpringWebflowApplication.class, args);
-	}
+  public static void main(String[] args) {
+    SpringApplication.run(SimpleSpringWebflowApplication.class, args);
+  }
 
 }
