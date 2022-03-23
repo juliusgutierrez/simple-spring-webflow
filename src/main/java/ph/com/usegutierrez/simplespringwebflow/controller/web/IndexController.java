@@ -1,15 +1,18 @@
 package ph.com.usegutierrez.simplespringwebflow.controller.web;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@Controller
-public class SignUpController {
+/**
+ * Created by juliusgutierrez on 3/23/22.
+ */
 
-  @GetMapping("/signup")
+@Controller
+public class IndexController {
+
+  @GetMapping("/")
   public String getSignUpPage() {
-    return "singup";
+    return "index";
   }
 
 }
