@@ -1,26 +1,33 @@
 package ph.com.usegutierrez.simplespringwebflow.dto;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 /**
  * Created by juliusgutierrez on 3/23/22.
  */
-@Getter
-@Setter
 public class PersonalInfo implements Serializable {
 
 
   @NotBlank
-  private String username;
+  private String firstName;
 
   @NotBlank
-  private String password;
+  private String lastName;
 
+  public String getFirstName() {
+    return firstName;
+  }
 
+  public void setFirstName(String firstName) {
+    this.firstName = firstName;
+  }
 
+  public String getLastName() {
+    return lastName;
+  }
 
+  public void setLastName(String lastName) {
+    this.lastName = lastName;
+  }
 }

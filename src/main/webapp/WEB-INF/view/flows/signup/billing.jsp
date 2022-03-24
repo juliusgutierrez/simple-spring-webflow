@@ -1,16 +1,48 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: juliusgutierrez
-  Date: 3/25/22
-  Time: 12:15 AM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form"%>
+
+<!DOCTYPE html>
+
 <head>
-    <title>$Title$</title>
+    <jsp:include page="../../shared/common-css.jsp"></jsp:include>
 </head>
+
 <body>
-$END$
+<div class="container">
+
+    <div class="mt-5">
+        <a href="${flowExecutionUrl}&_eventId_home">HOME</a>
+    </div>
+    <div class="mt-3">
+        <h4>Sign up - Billing Address</h4>
+
+        <sf:form method="post" class="form-horizontal"
+                 id="signupForm"
+                 modelAttribute="billing">
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Address</label>
+                <div class="col-md-8">
+                    <sf:input type="text" path="address"
+                              class="form-control"
+                              placeholder="Address"
+                    />
+                </div>
+            </div>
+
+            <div>
+                <button type="submit"
+                        class="btn btn-primary" name="_eventId_billing">
+                    Confirm
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+
+        </sf:form>
+    </div>
+</div>
+
 </body>
+
+<jsp:include page="../../shared/common-js.jsp"></jsp:include>
+
 </html>

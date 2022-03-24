@@ -4,11 +4,17 @@
   xsi:schemaLocation="http://www.springframework.org/schema/webflow
                           http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
-  <var name="perfonalInfo" class="ph.com.usegutierrez.simplespringwebflow.dto.PersonalInfo" />
+  <var name="user" class="ph.com.usegutierrez.simplespringwebflow.dto.PersonalInfo" />
+  <var name="billing" class="ph.com.usegutierrez.simplespringwebflow.dto.Billing" />
+
 
   <!-- start state -->
-  <view-state id="signup" view="flows/signup/signup">
+  <view-state id="signup" view="flows/signup/signup" model="user">
+    <transition on="billing" to="billing"/>
+  </view-state>
 
+  <view-state id="billing" view="flows/signup/billing" model="billing">
+    <transition on="billing" to="billing"/>
   </view-state>
 
   <view-state id="home" view="externalRedirect:contextRelative:/" />
