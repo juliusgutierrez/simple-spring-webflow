@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * Created by juliusgutierrez on 3/23/22.
  */
-public class PersonalInfo implements Serializable {
+public class User implements Serializable {
 
 
   @NotBlank

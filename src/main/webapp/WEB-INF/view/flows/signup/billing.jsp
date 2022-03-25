@@ -30,6 +30,13 @@
             </div>
 
             <div>
+
+                <button type="submit"
+                        class="btn btn-primary" name="_eventId_signup">
+                    <i class="fa-solid fa-chevron-left"></i>
+                    Personal
+                </button>
+
                 <button type="submit"
                         class="btn btn-primary" name="_eventId_billing">
                     Confirm

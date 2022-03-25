@@ -4,20 +4,43 @@
   xsi:schemaLocation="http://www.springframework.org/schema/webflow
                           http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
-  <var name="user" class="ph.com.usegutierrez.simplespringwebflow.dto.PersonalInfo" />
+  <var name="user" class="ph.com.usegutierrez.simplespringwebflow.dto.User" />
   <var name="billing" class="ph.com.usegutierrez.simplespringwebflow.dto.Billing" />
 
+
+  <on-start>
+    <evaluate expression="registerHandler.init()" result="flowScope.registerModel" />
+  </on-start>
 
   <!-- start state -->
   <view-state id="signup" view="flows/signup/signup" model="user">
     <transition on="billing" to="billing"/>
+    <on-exit>
+      <evaluate expression="registerHandler.addUser(flowScope.registerModel, user)" />
+    </on-exit>
+    
   </view-state>
 
   <view-state id="billing" view="flows/signup/billing" model="billing">
-    <transition on="billing" to="billing"/>
+    <transition on="signup" to="signup"/>
+    <transition on="billing" to="confirm"/>
+    <on-exit>
+      <evaluate expression="registerHandler.addBilling(flowScope.registerModel, billing)" />
+    </on-exit>
   </view-state>
 
-  <view-state id="home" view="externalRedirect:contextRelative:/" />
+  <view-state id="confirm" view="flows/signup/confirm" model="flowScope.registerModel">
+    <transition on="billing" to="billing"/>
+    <transition on="submit" to="submit"/>
+  </view-state>
+
+  <action-state id="submit">
+    <evaluate expression="registerHandler.save(flowScope.registerModel)"/>
+    <transition on="success" to="success" />
+  </action-state>
+
+  <end-state id="home" view="externalRedirect:contextRelative:/" />
+  <end-state id="success" view="flows/signup/success"/>
 
   <global-transitions>
     <transition on="home" to="home"></transition>
