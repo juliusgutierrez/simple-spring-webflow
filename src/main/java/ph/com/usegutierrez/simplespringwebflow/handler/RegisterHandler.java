@@ -1,17 +1,23 @@
 package ph.com.usegutierrez.simplespringwebflow.handler;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
-import ph.com.usegutierrez.simplespringwebflow.dto.Billing;
+import ph.com.usegutierrez.simplespringwebflow.dao.UserRepository;
+import ph.com.usegutierrez.simplespringwebflow.entity.Billing;
 import ph.com.usegutierrez.simplespringwebflow.dto.RegisterModel;
-import ph.com.usegutierrez.simplespringwebflow.dto.User;
+import ph.com.usegutierrez.simplespringwebflow.entity.User;
 
 
 /**
  * Created by juliusgutierrez on 3/25/22.
  */
 
+
+@RequiredArgsConstructor
 @Component
 public class RegisterHandler {
+
+  private final UserRepository userRepository;
 
 
   public RegisterModel init() {
@@ -32,6 +38,7 @@ public class RegisterHandler {
 
     String transitionValue = "success";
 
+    userRepository.save(model.getUser());
 
     return transitionValue;
 

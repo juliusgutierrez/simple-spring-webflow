@@ -10,7 +10,7 @@
 <div class="container">
 
     <div class="mt-5">
-        <a href="${flowExecutionUrl}&_eventId_home">HOME</a>
+        <a href="${contextRoot}/">HOME</a>
     </div>
     <div class="mt-3">
         <h4>Success!</h4>

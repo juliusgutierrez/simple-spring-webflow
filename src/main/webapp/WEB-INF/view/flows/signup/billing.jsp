@@ -26,6 +26,7 @@
                               class="form-control"
                               placeholder="Address"
                     />
+                    <sf:errors path="address" cssClass="text-danger" element="em"/>
                 </div>
             </div>
 

@@ -26,6 +26,7 @@
                                   class="form-control"
                                   placeholder="First Name"
                         />
+                        <sf:errors path="firstName" cssClass="text-danger" element="em"/>
                     </div>
                 </div>
 
@@ -36,6 +37,7 @@
                                   class="form-control"
                                   placeholder="Last Name"
                         />
+                        <sf:errors path="lastName" cssClass="text-danger" element="em"/>
                     </div>
                 </div>
 
