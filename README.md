@@ -3,5 +3,5 @@ A simple signup process using spring webflow
 
 ### How to build and run
 
-in terminal type goto the project and run maven command : 
+goto the project and open terminal. run maven command: 
 ``mvn spring-boot: run``
